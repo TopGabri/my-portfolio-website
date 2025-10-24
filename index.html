@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
+
+  <!-- BODY  -->
+  
   <body>
     <nav id="desktop-nav">
       <div class="logo">Gabriele Arcidiacono</div>
@@ -36,6 +39,9 @@
         </div>
       </div>
     </nav>
+
+    <!-- PROFILE section  -->
+
     <section id="profile">
       <div class="section__pic-container">
         <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
@@ -71,9 +77,13 @@
         </div>
       </div>
     </section>
+
+    <!-- ABOUT section -->
+
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
+      <div class="section-about">
       <div class="section-container">
         <div class="section__pic-container">
           <img
@@ -92,11 +102,12 @@
               />
               <h3>Education</h3>
               <p>BSc Computer Engineering<br /></p>
+              <p>Politecnico di Torino, 2021-2024</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-            I am a Computer Engineering student at Politecnico di Torino (Torino, Italy), finishing my Master Degree in Embedded Systems. I enjoy tackling projects that
+            I am a Computer Engineering student at <strong>Politecnico di Torino</strong> (Torino, Italy), finishing my Master Degree in <strong>Embedded Systems</strong>. I enjoy tackling projects that
             merge electronics and code — from microcontroller programming to
             digital design. Check out my skills and projects to see what I've been up to!
             </p>
@@ -110,6 +121,9 @@
         onclick="location.href='./#experience'"
       />
     </section>
+
+    <!-- EXPERIENCE section -->
+
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Skills</h1>
@@ -256,12 +270,15 @@
         onclick="location.href='./#projects'"
       />
     </section>
+
+    <!-- PROJECTS section -->
+
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container color-container">
+          <div class="details-container color-container clickable" data-href="/projects/dlx.html" role="link" tabindex="0" aria-label="Open DLX project">
             <div class="article-container">
               <img
                 src="./assets/dlx.png"
@@ -270,22 +287,23 @@
               />
             </div>
             <h2 class="experience-sub-title project-title">DLX processor</h2>
-            <div class="btn-container">
+            <div class="text-container">
+              <p>
+                Design, implementation and testing of a fully pipelined 5-stage RISC processor
+                following the DLX architecture model
+              </p>
+            </div>
+            <!-- <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/TopGabri/DLX'"
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/TopGabri/DLX'"
-              >
-                Live Demo
-              </button>
-            </div>
+            </div> -->
           </div>
-          <div class="details-container color-container">
+          <!-- Pac-Man -->
+          <div class="details-container color-container clickable" data-href="/projects/pacman.html" role="link" tabindex="0" aria-label="Open Pac-Man project">
             <div class="article-container">
               <img
                 src="./assets/Pacman.gif"
@@ -294,7 +312,13 @@
               />
             </div>
             <h2 class="experience-sub-title project-title">Pac-Man</h2>
-            <div class="btn-container">
+            <div class="text-container">
+              <p>
+                Development of the classic Pac-Man game on a LandTiger Board
+                using C 
+              </p>
+            </div>
+            <!-- <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/TopGabri/Pac-Man'"
@@ -307,9 +331,9 @@
               >
                 Live Demo
               </button>
-            </div>
+            </div> -->
           </div>
-          <div class="details-container color-container">
+          <div class="details-container color-container clickable" data-href="https://github.com/TopGabri/Qemu-Board-Emulation/" role="link" tabindex="0" aria-label="Open Qemu project">
             <div class="article-container">
               <img
                 src="./assets/OSES_proj.png"
@@ -318,22 +342,28 @@
               />
             </div>
             <h2 class="experience-sub-title project-title">Board emulation with Qemu</h2>
-            <div class="btn-container">
+            <!-- <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/TopGabri/Qemu-Board-Emulation/'"
               >
                 Github
-              </button>
+              </button> 
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/TopGabri/Qemu-Board-Emulation/'"
               >
                 Live Demo
               </button>
+            </div> -->
+            <div class="text-container">
+              <p>
+               Emulatation of a custom version of the NXP S32K3X8EVB board with Qemu, integrating
+                UART and CAN peripherals.
+              </p>
             </div>
           </div>
-          <div class="details-container color-container">
+          <div class="details-container color-container clickable" data-href="https://github.com/TopGabri/Low-Power-Contest" role="link" tabindex="0" aria-label="Open Low-Power Contest project">
             <div class="article-container">
               <img
                 src="./assets/SODS_proj.png"
@@ -342,7 +372,13 @@
               />
             </div>
             <h2 class="experience-sub-title project-title">Low-Power Contest</h2>
-            <div class="btn-container">
+            <div class="text-container">
+              <p>
+              </br></br> A Tcl procedure for PrimeTime that minimizes post-synthesis
+              leakage power
+              </p>
+            </div>
+            <!-- <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="location.href='https://github.com/TopGabri/Low-Power-Contest'"
@@ -355,7 +391,7 @@
               >
                 Live Demo
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -366,6 +402,9 @@
         onclick="location.href='./#contact'"
       />
     </section>
+
+    <!-- CONTACT section -->
+
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>

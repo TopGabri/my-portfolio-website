@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DLX Processor Project - Gabriele Arcidiacono</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/mediaqueries.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav id="desktop-nav">
+      <div class="logo">Gabriele Arcidiacono</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/index.html#experience">Experience</a></li>
+          <li><a href="/index.html#projects">Projects</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Gabriele Arcidiacono</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="/index.html#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="/index.html#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="/index.html#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="/index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN PROJECT SECTION -->
+    <section id="project-details">
+      <h1 class="title">Pac-Man</h1>
+      <div class="video-text-container">
+        <div class="video-container">
+          <video src="./assets/pacman.mp4" 
+              controls 
+              autoplay  
+              muted
+              loop 
+              width="640" 
+              height="360">
+            </video>
+          <p class="description">Gameplay of Pac-Man on the LandTiger Board</p>
+        </div>
+        <div class="text-container">
+            <p>
+              The Pac-Man project was developed by me as part of the <strong>Computer Architectures</strong> course
+              of my first year of Master at Politecnico di Torino. The goal was to design and implement a fully
+              functional version of the classic Pac-Man game on a LandTiger Board, using the C language in the 
+              Keil uVision IDE.
+            </br></br>
+            <p>
+              The game was completely designed from scratch, including the graphics, sound effects, and game logic. The maze that you see I designed pixel by pixel
+              to try to match the original one as much as possible.
+              The hardest part was actually to make everything work and to make it nice to play.
+            </br></br>
+            </p>
+            <p>
+              To implement the game I had to exploit several peripherals of the LPC1768 SoC and components of the board, including:</br></br>
+              <div class="items-ul">
+              <ul>
+                <li>The <strong>LCD display</strong> to render the game graphics, including the maze, Pac-Man, ghosts, pellets, and score.</li>
+                <li>The <strong>joystick</strong> to control Pac-Man's movement.</li>
+                <li>The <strong>timers and interrupts</strong> to manage game timing, including Pac-Man movement, ghost movement, pellet consumption, and game over conditions.</li>
+                <li>The <strong>DAC</strong> and the <strong>buzzer</strong> to play sound effects</li>
+              </ul>
+              </div>
+            </p>
+        </div>
+      </div>
+      <div class="section-container">
+        <div class="about-project-container">
+          <div class="text-container">
+            <p>
+              To get more specific, the whole design and implementation process involved several challenges:
+              </br></br>
+            </p>
+              <div class="items-ul">
+              <ul>
+                <li>designing the <strong>game board</strong> to seamlessly fit all its elements:</li>
+                <div class="items-ul">
+                <ul>
+                  <li>creating the layout of the <strong>maze</strong> so that it fit exactly <strong>240 standard pellets</strong> and so that it could be mapped to a <strong>matrix</strong></li>
+                  <li>map every other object to the matrix so that it could be referenced and manipulated during gameplay</li></br>
+                </ul>
+                </div>
+                <li>managing the movement of <strong>Pac-Man</strong>:</li>
+                <div class="items-ul">
+                <ul>
+                    <li>making it move only within the walls and not go through them</li>
+                    <li>ensuring the movement was <strong>fluid</strong> and <strong>responsive</strong>, without sudden steps or glitches</li>
+                    <li>managing every possible event without causing <strong>significant</strong> slowdowns or crashes</li></br>
+                </ul>
+                </div>
+                <li>implementing and managing the <strong>ghost</strong>:</li>
+                <div class="items-ul">
+                <ul>
+                    <li>creating <strong>shortest path algorithm</strong> that was not too memory and time consuming (definitely not A*) for the ghost's movement, making it chase Pac-Man</li>
+                    <li>increasing its <strong>speed</strong> over time or at certain points in the game</li>
+                    <li>handling the behavior when <strong>power pellets</strong> are eaten, making the ghost vulnerable and allowing Pac-Man to eat it</li>
+                </ul>
+                </div>
+              </ul>
+            </div>
+            <p>
+            </br>To implement such game dynamics I had to meticulously exploit several <strong>timers</strong> and in particular timer <strong>interrupts</strong>, which allowed precise control over the moment in time or event (like movement of the joystick) that triggers certain actions in the game. Moreover I had to be careful not to write too expensive code in between event, to avoid messing up the timing of the game.
+            </p> 
+            <p>
+              </br>
+              You can explore the full source code on the project's GitHub page.
+            </p>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2" onclick="location.href='https://github.com/TopGabri/Pac-Man'">View Source</button>
+            <button class="btn btn-color-1" onclick="location.href='/index.html#projects'">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

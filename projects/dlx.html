@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DLX Processor Project - Gabriele Arcidiacono</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/mediaqueries.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav id="desktop-nav">
+      <div class="logo">Gabriele Arcidiacono</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/index.html#experience">Experience</a></li>
+          <li><a href="/index.html#projects">Projects</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Gabriele Arcidiacono</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="/index.html#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="/index.html#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="/index.html#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="/index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN PROJECT SECTION -->
+    <section id="project-details">
+      <h1 class="title">DLX Processor</h1>
+      <!-- <div class="project-hero"> -->
+        <div class="image-card clickable" onClick="window.open('./assets/dlx.png', '_blank')">
+        <img src="./assets/dlx.png" alt="DLX Project image" />
+        <p class="image-description ">Simplified DLX Processor Architecture Diagram</p>
+      </div>
+      <div class="section-container">
+        <div class="about-project-container">
+          <div class="text-container">
+            <p>
+              The DLX project was developed by me and my team as part of the <strong>Microelectronic Systems</strong> course
+              at Politecnico di Torino. The goal was to design and implement a fully
+              pipelined <strong>5-stage RISC processor</strong>, following the DLX architecture model.
+            </p>
+            <p>
+              The project covered all stages — from the high-level specification down to
+              <strong>synthesis and physical design</strong>. The implementation was done in
+              <strong>VHDL</strong>, using mainly <strong>Vivado</strong> as simulation framework, and <strong>Synopsys</strong> tools to synthesize.
+            </p>
+            <p></br>
+              We performed a <strong>bottom-up</strong> design approach, creating smaller components to be used to build bigger components. We started from creating the <strong>ALU blocks</strong>: the adder/subtractor, logical unit, shifter, comparator. These components were all merged into a single ALU unit. We then proceeded to create the other blocks forming the <strong>datapath</strong>: the register file, the sign-extender, the instruction memory, the data memory, the branch evaluation logic. Meanwhile, we designed the <strong>control unit</strong>, responsible for generating the necessary control signals for the datapath components. Finally, we integrated all components to build a <strong>basic</strong> functioning processor. </br></br> At this point we started to handle more complex aspects such as <strong>data hazards</strong> and <strong>control hazards</strong>, implementing techniques like <strong>forwarding</strong>, pipeline <strong>stalling</strong> and <strong>flushing</strong> to ensure correct execution of instructions. Finally, we implemented <strong>branch prediction</strong> logic with a <strong>BHT</strong> (Branch History Table) to reduce the average penalty caused by branch instructions and lower the overall CPI, and we added a <strong>data cache</strong> with write-back policy to improve memory access times.
+            </br>
+            </p>
+            <p>
+              </br>
+              Each new feature caused an increase in complexity, requiring careful planning and testing to ensure correct functionality. We validated each component individualy with a <strong>testbench</strong> before integrating it into the main processor design. And then we performed integration tests to verify the correct operation of the entire system. With the help of an <strong>assembler</strong> provided by the professors, and some <strong>custom scripts</strong>, we were able to run various assembly programs (for example a program implementing the <strong>Quicksort</strong> algorithm) on the processor, verifying its correct functionality.
+            </p>
+            <p>
+              </br>
+              You can explore the full source code on the project's GitHub page.
+            </p>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2" onclick="location.href='https://github.com/TopGabri/DLX'">View Source</button>
+            <button class="btn btn-color-1" onclick="location.href='/index.html#projects'">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Credits to Ade-mir.
+        <a href="https://github.com/Ade-mir/html-css-js-portfolio-tutorial-2/tree/main" target="_blank"
+          >Template GitHub repository</a
+        >
+      </p>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

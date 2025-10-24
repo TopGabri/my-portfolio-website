@@ -37,6 +37,10 @@
   section {
     margin: 0 5%;
   }
+  .section-about {
+    height: 0vh;
+    margin: 0rem 5rem;
+  }
   .section__pic-container {
     width: 275px;
     height: 275px;
@@ -53,7 +57,7 @@
     height: 40vh;
   }
   #profile {
-    height: 83vh;
+    height: 60vh;
     margin-bottom: 0;
   }
   article {

@@ -45,6 +45,7 @@ nav {
   font-size: 1.5rem;
 }
 
+
 a {
   color: black;
   text-decoration: none;
@@ -150,10 +151,15 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  /* height: 96vh; */
+  margin: 0rem 10rem;
   box-sizing: border-box;
   min-height: fit-content;
+}
+
+.section-about {
+  height: 96vh;
+  margin: 0rem 5rem;
 }
 
 .section-container {
@@ -166,7 +172,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  height: 60vh;
 }
 
 .section__pic-container {
@@ -276,7 +282,17 @@ section {
 .about-details-container {
   justify-content: center;
   flex-direction: column;
+  gap: 2.5rem;
 }
+
+.about-project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: justify;
+  padding-bottom: 2rem;
+}
+
 
 .about-containers,
 .about-details-container {
@@ -301,7 +317,9 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  min-width: 30vw;
 }
+
 
 .section-container {
   gap: 4rem;
@@ -333,22 +351,7 @@ section {
   flex-direction: column;
 }
 
-/* .article-container {
-  display: flex;
-  text-align: initial;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
-} */
 
-/* .article-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2.5rem;
-  justify-items: center;
-} */
 
 .article-container {
   display: flex;
@@ -390,9 +393,89 @@ article .icon {
 }
 
 .project-img {
-  border-radius: 2rem;
+  border-radius: 1rem;
   width: 90%;
   height: 90%;
+}
+
+/* Project hero image (full-width on project pages) */
+/* .project-hero {
+  width: 100%;
+  margin: 0 auto 0 auto; 
+  overflow: hidden;
+  border-radius: 1rem;
+} */
+/* .project-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+} */
+
+.image-card {
+  display: flex;
+  flex-direction: column;   /* stack image and text vertically */
+  align-items: center;      /* center both horizontally */
+  justify-content: center;
+  width: 100%;             /* you can also use % or vw here */
+  padding: 1rem;
+  margin: 2rem auto 3rem auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+  width: 100%;              /* make the image fit the card width */
+  height: auto;             /* preserve aspect ratio */
+  border-radius: 8px;
+}
+
+.video-text-container {
+  display: flex;
+  flex-wrap: wrap;              /* allows stacking on smaller screens */
+  align-items: flex-start;      /* top-align video and text */
+  justify-content: center;      /* center them horizontally */
+  gap: 2rem;                    /* spacing between video and text */
+  margin: 2rem auto;
+  max-width: 1000px;            /* keeps layout neat on wide screens */
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column; /* stack video and text vertically */
+  align-items: center;    /* center both horizontally */
+  justify-content: center;
+  text-align: center;     /* center text */
+  flex: 1 1 300px;
+}
+
+.video-container video {
+  max-width: 80%;  /* responsive width */
+  height: auto;    /* maintain aspect ratio */
+  border-radius: 5px; /* optional: rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* optional: subtle shadow */
+}
+
+.video-container .description {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #444;
+  max-width: 80%; /* keep text aligned with video width */
+}
+
+.text-container {
+  flex: 2 1 400px;              /* text takes up more space than video */
+  text-align: justify;
+  line-height: 1.5;
+}
+
+
+.image-description {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
 }
 
 .project-title {
@@ -403,6 +486,33 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+.project-subtext {
+  margin: 0.25rem 1rem 1rem 1rem;
+  font-size: 0.95rem;
+  color: rgb(85,85,85);
+  text-align: center;
+  /* ensure it doesn't force width changes of the card */
+  width: calc(100% - 2rem);
+  box-sizing: border-box;
+}
+
+/* Clickable card behavior: slight enlarge on hover, subtle press effect on active */
+.clickable {
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.clickable:focus {
+  outline: none; /* keep visual change minimal; we add a subtle box-shadow instead */
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+.clickable:hover {
+  transform: scale(1.02);
+}
+.clickable:active {
+  transform: scale(0.995);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
 }
 
 /* CONTACT */
@@ -422,6 +532,7 @@ article .icon {
   border-color: rgb(163, 163, 163);
   background: (250, 250, 250);
   margin: 2rem auto;
+  gap: 1rem;
   padding: 0.5rem;
 }
 
@@ -454,4 +565,13 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+ul {
+  /* padding-left: 40px;  increase indent */
+  color: rgb(85, 85, 85);
+}
+
+.items-ul {
+  padding-left: 40px;  /* increase indent */
 }

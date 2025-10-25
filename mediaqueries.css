@@ -38,7 +38,7 @@
     margin: 0 5%;
   }
   .section-about {
-    height: 0vh;
+    height: auto;
     margin: 0rem 5rem;
   }
   .section__pic-container {
@@ -66,6 +66,10 @@
   footer nav {
     height: fit-content;
     margin-bottom: 2rem;
+  }
+  .section-about {
+    height: auto;
+    margin: 0rem 5rem;
   }
   .about-containers,
   .contact-info-upper-container,

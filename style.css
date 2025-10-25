@@ -159,7 +159,7 @@ section {
 
 .section-about {
   height: 96vh;
-  margin: 0rem 5rem;
+  /* margin: 0rem 5rem; */
 }
 
 .section-container {
@@ -282,7 +282,7 @@ section {
 .about-details-container {
   justify-content: center;
   flex-direction: column;
-  gap: 2.5rem;
+  /* gap: 2.5rem; */
 }
 
 .about-project-container {
@@ -297,6 +297,7 @@ section {
 .about-containers,
 .about-details-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .about-pic {
@@ -417,7 +418,7 @@ article .icon {
   flex-direction: column;   /* stack image and text vertically */
   align-items: center;      /* center both horizontally */
   justify-content: center;
-  width: 100%;             /* you can also use % or vw here */
+  width: 90%;             /* you can also use % or vw here */
   padding: 1rem;
   margin: 2rem auto 3rem auto;
   border-radius: 12px;
@@ -465,9 +466,13 @@ article .icon {
 }
 
 .text-container {
-  flex: 2 1 400px;              /* text takes up more space than video */
+  /*flex: 2 1 400px;             /* text takes up more space than video */
   text-align: justify;
   line-height: 1.5;
+}
+
+.video-text {
+  flex: 2 1 400px;
 }
 
 
@@ -573,5 +578,6 @@ ul {
 }
 
 .items-ul {
-  padding-left: 40px;  /* increase indent */
+  padding-left: 20px;  /* increase indent */
+  padding-right: 20px; 
 }

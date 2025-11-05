@@ -56,22 +56,23 @@
             <p>
               The Pac-Man project was developed by me as part of the <strong>Computer Architectures</strong> course
               of my first year of Master at Politecnico di Torino. The goal was to design and implement a fully
-              functional version of the classic Pac-Man game on a LandTiger Board, using the C language in the 
-              Keil uVision IDE.
+              functional version of the classic Pac-Man game on the <strong>LandTiger</strong> Arm development board, featuring the <strong>NXP LPC1768 SoC</strong> with a <strong>Cortex-M3</strong> core. 
+            </br> The code was entirely developed in <strong>C</strong> (exploiting the CMSIS), and the physical board was programmed and debugged with Arm's <strong>ULINK2/ME</strong> adapter via JTAG interface, using
+              Arm's <strong>Keil uVision</strong> IDE.
             </br></br>
             <p>
               The game was completely designed from scratch, including the graphics, sound effects, and game logic. The maze that you see I designed pixel by pixel
               to try to match the original one as much as possible.
-              The hardest part was actually to make everything work and to make it nice to play.
+              The hardest part was actually making everything work and nice to play.
             </br></br>
             </p>
             <p>
-              To implement the game I had to exploit several peripherals of the LPC1768 SoC and components of the board, including:</br></br>
+              To implement the game, I had to exploit several peripherals of the LPC1768 SoC and components of the board, including:</br></br>
               <div class="items-ul">
               <ul>
-                <li>The <strong>LCD display</strong> to render the game graphics, including the maze, Pac-Man, ghosts, pellets, and score.</li>
+                <li>The 320x240 <strong>TFT LCD display</strong> to render the game graphics, including the maze, Pac-Man, ghosts, pellets, and score.</li>
                 <li>The <strong>joystick</strong> to control Pac-Man's movement.</li>
-                <li>The <strong>timers and interrupts</strong> to manage game timing, including Pac-Man movement, ghost movement, pellet consumption, and game over conditions.</li>
+                <li><strong>timers and interrupts</strong> to manage game timing, Pac-Man movement, ghost movement, pellet consumption, and game over conditions.</li>
                 <li>The <strong>DAC</strong> and the <strong>buzzer</strong> to play sound effects</li>
               </ul>
               </div>
@@ -82,30 +83,33 @@
         <div class="about-project-container">
           <div class="text-container">
             <p>
-              To get more specific, the whole design and implementation process involved several challenges:
+              To get more specific, the whole design and implementation process involved several steps, including:
               </br></br>
             </p>
               <div class="items-ul">
               <ul>
-                <li>designing the <strong>game board</strong> to seamlessly fit all its elements:</li>
+                <li>designing the <strong>game board</strong> and all of its elements:</li>
                 <div class="items-ul">
                 <ul>
-                  <li>creating the layout of the <strong>maze</strong> so that it fit exactly <strong>240 standard pellets</strong> and so that it could be mapped to a <strong>matrix</strong></li>
-                  <li>map every other object to the matrix so that it could be referenced and manipulated during gameplay</li></br>
+                  <li>creating the layout of the <strong>maze</strong> to fit exactly <strong>240 standard pellets</strong> and so that it could be mapped to a <strong>2-dimensional array</strong>.</li>
+                  <!-- <li>creating the characters (Pac-Man and ghost) as C structs with assigned </li> -->
+                </br>
                 </ul>
                 </div>
-                <li>managing the movement of <strong>Pac-Man</strong>:</li>
+                <li>Implementing and managing <strong>Pac-Man</strong>:</li>
                 <div class="items-ul">
                 <ul>
+                    <li>implementing Pac-Man as a C struct with assigned properties (position, direction, etc.), placing it in the game board array and drawing it on the display </li>
                     <li>making it move only within the walls and not go through them</li>
                     <li>ensuring the movement was <strong>fluid</strong> and <strong>responsive</strong>, without sudden steps or glitches</li>
                     <li>managing every possible event without causing <strong>significant</strong> slowdowns or crashes</li></br>
                 </ul>
                 </div>
-                <li>implementing and managing the <strong>ghost</strong>:</li>
+                <li>Implementing and managing the <strong>ghost</strong>:</li>
                 <div class="items-ul">
                 <ul>
-                    <li>creating <strong>shortest path algorithm</strong> that was not too memory and time consuming (definitely not A*) for the ghost's movement, making it chase Pac-Man</li>
+                    <li>creating the ghost as a C struct with assigned properties (position, direction, etc.), placing it in the game board array and drawing it on the display</li>
+                    <li>creating a <strong>shortest path algorithm</strong> that was not too memory and time consuming (definitely not A*) for the ghost's movement, making it chase Pac-Man</li>
                     <li>increasing its <strong>speed</strong> over time or at certain points in the game</li>
                     <li>handling the behavior when <strong>power pellets</strong> are eaten, making the ghost vulnerable and allowing Pac-Man to eat it</li>
                 </ul>
@@ -117,7 +121,7 @@
             </p> 
             <p>
               </br>
-              You can explore the full source code on the project's GitHub page.
+              You can explore the full source code and implementation details on the project's GitHub page.
             </p>
           </div>
           <div class="btn-container">
